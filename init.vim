@@ -11,8 +11,8 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
-"key-bindings 
-"------------
+"general settings 
+"----------------
 imap jj <Esc>
 let mapleader=" "
 set number
@@ -62,8 +62,8 @@ command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 
 
-"coc.nvim copied default settings
-"--------------------------------
+"coc.nvim settings from README
+"-----------------------------
 " TextEdit might fail if hidden is not set.
 set hidden
 
