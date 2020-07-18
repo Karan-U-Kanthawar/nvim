@@ -1,0 +1,4 @@
+#Avoid these folders
+/autoload
+/plugged
+/pack
