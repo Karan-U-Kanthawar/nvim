@@ -1,14 +1,14 @@
-
 "Plugins 
 "-------
 call plug#begin('~/AppData/Local/nvim/plugged') 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'morhetz/gruvbox'
+Plug 'joshdick/onedark.vim'
+"Plug 'morhetz/gruvbox'
 Plug 'preservim/nerdtree'
-Plug 'iCyMind/NeoSolarized'
-Plug 'vim-airline/vim-airline'
-Plug 'ryanoasis/vim-devicons'
-Plug 'vim-airline/vim-airline-themes'
+"Plug 'iCyMind/NeoSolarized'
+"Plug 'vim-airline/vim-airline'
+"Plug 'ryanoasis/vim-devicons'
+"Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 "general settings 
@@ -24,11 +24,14 @@ set tabstop=2 softtabstop=2 shiftwidth=2
 set smartindent
 set colorcolumn=70
 highlight ColorColumn ctermbg=0 guibg=LightGray
-		
 
-"gruvbox theme
+"if has('python3')
+set pyx=3
+"endif	
+
+"themes
 "-------------
-colorscheme gruvbox
+colorscheme onedark
 set background=dark 
 
 "nerdtree key-bindings
@@ -48,8 +51,6 @@ autocmd FileType json syntax match Comment +\/\/.\+$+
 let g:coc_global_extensions = [
 			\ 'coc-tsserver',
 			\ 'coc-json',
-			\ 'coc-html',
-			\ 'coc-css',
 			\ 'coc-pairs',
 			\ 'coc-vimlsp',
 			\ 'coc-yank',
@@ -59,8 +60,8 @@ let g:coc_global_extensions = [
 "Prettier settings
 "-----------------
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
-
-
+vmap <leader><leader>f <Plug>(coc-format-selected)
+nmap <leader><leader>f <Plug>(coc-format-selected)
 
 "coc.nvim settings from README
 "-----------------------------

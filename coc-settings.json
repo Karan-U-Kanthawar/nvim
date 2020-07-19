@@ -1,6 +1,5 @@
 {
-	//Prettier
-	"coc.preferences.formatOnSaveFiletypes": ["html","css","scss","js","ts"],
+	"coc.preferences.formatOnSaveFiletypes": ["js"],
 	"prettier.singleQuote":true,
 	"prettier.arrowParens": "always"
 
