@@ -3,8 +3,9 @@
 call plug#begin('~/AppData/Local/nvim/plugged') 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'joshdick/onedark.vim'
-"Plug 'morhetz/gruvbox'
 Plug 'preservim/nerdtree'
+Plug 'wakatime/vim-wakatime'
+"Plug 'morhetz/gruvbox'
 "Plug 'iCyMind/NeoSolarized'
 "Plug 'vim-airline/vim-airline'
 "Plug 'ryanoasis/vim-devicons'
