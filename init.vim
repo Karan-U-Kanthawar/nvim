@@ -30,6 +30,12 @@ highlight ColorColumn ctermbg=0 guibg=LightGray
 set pyx=3
 "endif	
 
+"kite plugin
+"-----------
+let g:kite_supported_languages=['javascript']
+set statusline=%<%f\ %h%m%r%{kite#statusline()}%=%-14.(%l,%c%V%)\ %P
+set laststatus=2  " always display the status line">
+
 "themes
 "-------------
 colorscheme onedark
