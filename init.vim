@@ -2,21 +2,23 @@
 "-------
 call plug#begin('~/AppData/Local/nvim/plugged') 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'joshdick/onedark.vim'
+"Plug 'joshdick/onedark.vim'
+"Plug 'ms-jpq/chadtree', {'branch':'chad','do':':UpdateRemotePlugins'}
 Plug 'preservim/nerdtree'
 Plug 'wakatime/vim-wakatime'
 "Plug 'morhetz/gruvbox'
-"Plug 'iCyMind/NeoSolarized'
-"Plug 'vim-airline/vim-airline'
+Plug 'iCyMind/NeoSolarized'
+Plug 'vim-airline/vim-airline'
 "Plug 'ryanoasis/vim-devicons'
 "Plug 'vim-airline/vim-airline-themes'
+"Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 "general settings 
 "----------------
 imap jj <Esc>
 let mapleader=" "
-set number
+"set number
 set cursorline
 syntax on
 set incsearch
@@ -25,6 +27,13 @@ set tabstop=2 softtabstop=2 shiftwidth=2
 set smartindent
 set colorcolumn=70
 highlight ColorColumn ctermbg=0 guibg=LightGray
+
+"relative line number
+set nonu
+set relativenumber
+
+" vim gutter
+"let g:gitgutter_git_executable = 'C:\Program Files\Git\bin\git.exe'
 
 "if has('python3')
 set pyx=3
@@ -38,7 +47,7 @@ set laststatus=2  " always display the status line">
 
 "themes
 "-------------
-colorscheme onedark
+colorscheme NeoSolarized
 set background=dark 
 
 "nerdtree key-bindings
@@ -47,6 +56,9 @@ nmap <leader><leader>nt :NERDTreeToggle<CR>
 map <leader><leader>h :wincmd h<CR>
 map <leader><leader>l :wincmd l<CR>
 let NERDTreeShowHidden=1
+
+"chadtree key-bindings
+"nmap <leader><leader>ct <cmd>CHADopen<cr>
 
 "GUI config settings
 "-------------------
@@ -62,6 +74,7 @@ let g:coc_global_extensions = [
 			\ 'coc-vimlsp',
 			\ 'coc-yank',
 			\ 'coc-prettier',
+			\ 'coc-python',
 			\]
 
 "Prettier settings

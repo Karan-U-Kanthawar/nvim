@@ -1,6 +1,6 @@
 {
-	"coc.preferences.formatOnSaveFiletypes": ["js"],
+	"coc.preferences.formatOnSaveFiletypes": ["js", "py"],
 	"prettier.singleQuote":true,
-	"prettier.arrowParens": "always"
-
+	"prettier.arrowParens": "always",
+	"python.jediEnabled": false
 }
