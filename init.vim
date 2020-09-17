@@ -6,13 +6,21 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "Plug 'ms-jpq/chadtree', {'branch':'chad','do':':UpdateRemotePlugins'}
 Plug 'preservim/nerdtree'
 Plug 'wakatime/vim-wakatime'
-"Plug 'morhetz/gruvbox'
+Plug 'morhetz/gruvbox'
 Plug 'iCyMind/NeoSolarized'
 Plug 'vim-airline/vim-airline'
 "Plug 'ryanoasis/vim-devicons'
 "Plug 'vim-airline/vim-airline-themes'
 "Plug 'airblade/vim-gitgutter'
+Plug 'yuezk/vim-js'
+Plug 'maxmellon/vim-jsx-pretty'
+"Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+
+
 call plug#end()
+
+"python virtual env helper
+" let g: python_host_prog = '/C:/Python38/python.exe'
 
 "general settings 
 "----------------
@@ -47,7 +55,7 @@ set laststatus=2  " always display the status line">
 
 "themes
 "-------------
-colorscheme NeoSolarized
+colorscheme neosolarized
 set background=dark 
 
 "nerdtree key-bindings
@@ -77,11 +85,22 @@ let g:coc_global_extensions = [
 			\ 'coc-python',
 			\]
 
-"Prettier settings
-"-----------------
+"Prettier and ES-Lint settings 
+"-----------------------------
+if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
+	let g:coc_global_extensions += ['coc-prettier']
+endif
+if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
+	let g:coc_global_extensions += ['coc-eslint']
+endif
+
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 vmap <leader><leader>f <Plug>(coc-format-selected)
 nmap <leader><leader>f <Plug>(coc-format-selected)
+
+"Start syntax highlight from first
+autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
+autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
 
 "coc.nvim settings from README
 "-----------------------------
